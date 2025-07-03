@@ -3,7 +3,7 @@ import java.util.Scanner;                 //biblioteca de scanner (serve como um
 public class calculadora {
     public static void main(String[] args) {    
         int OP, Contador = 0;                                    //variável de opção e um contador
-        float result = 0;                                       //variável de resultado         
+        float result;                                            //variável de resultado         
         float[] num1 = new float[20];                         //variável de número para subtração
         Scanner inputDados = new Scanner(System.in);            //cria um objeto Scanner chamado "inputdeDADOS"
         do {
@@ -12,13 +12,14 @@ public class calculadora {
             System.out.println("---  2. Subtrair números  ---");
             System.out.println("--- 3.Multiplicar números ---");
             System.out.println("---  4. Dividir números   ---");
-            System.out.println("---  5. Fatoriar números  ---");
+            System.out.println("--- 5. Potenciar  números ---");
             System.out.println("---       6. Sair         ---");
             System.out.println("-----------------------------");
             System.out.println("Sua opção: ");
             OP = inputDados.nextInt();
             switch (OP) {
             case 1:
+                result = 0;
                 Contador = 0;
                 System.out.println("Quantos números serão somados?");
                 int i = inputDados.nextInt();                                      //declaração da variável i que vai ser usada para delimitar a estrutura de repetição
@@ -32,6 +33,7 @@ public class calculadora {
                 break;                                                               //fim case 1
 
             case 2:
+                result = 0;
                 Contador = 0;
                 System.out.println("Quantos números serão subtraídos?");
                 i = inputDados.nextInt();
@@ -47,7 +49,23 @@ public class calculadora {
                 }
                 System.out.println("A subtração dos números é de: " + result);       
                 break;                                                                 //fim case 2
-         
+
+            case 3:
+                result = 1;
+                Contador = 0;
+                System.out.println("Quantos números serão multiplicados?");
+                i = inputDados.nextInt();
+                for (int j=0;j<i;j++) {
+                    Contador = Contador + 1;
+                    System.out.println("Qual é o " + Contador + "º número?");             
+                    int n1 = inputDados.nextInt();                                  
+                    result = result * n1;
+                }
+                System.out.println("Produto dos números é de: " + result);       
+                break;                                                                 //fim case 3
+            
+            case 4:
+                
             default:
                 break;
             }
