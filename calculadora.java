@@ -2,7 +2,8 @@ import java.util.Scanner;                 //biblioteca de scanner (serve como um
 
 public class calculadora {
     public static void main(String[] args) {    
-        int OP;                                                  //variável de opção            
+        int OP, Contador = 0;                                    //variável de opção e um contador
+        float result = 0;                                       //variável de resultado            
         Scanner inputDados = new Scanner(System.in);            //cria um objeto Scanner chamado "inputdeDADOS"
         do {
             System.out.println("------Calculadora Java ------");
@@ -20,8 +21,12 @@ public class calculadora {
                 System.out.println("Quantos números serão somados?");
                 int i = inputDados.nextInt();
                 for (int j=0;j<i;j++) {
-                    
+                    Contador = Contador + 1;
+                    System.out.println("Qual é o " + Contador + "º número?");
+                    float n1 = inputDados.nextFloat();
+                    result = result + n1;
                 }
+                System.out.println("Soma dos números é de: " + result);
                 break;
         
             default:
