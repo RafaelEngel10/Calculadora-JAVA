@@ -3,7 +3,7 @@ import java.util.Scanner;                 //biblioteca de scanner (serve como um
 public class calculadora {
     public static void main(String[] args) {    
         int OP, Contador = 0;                                    //variável de opção e um contador
-        float result;                                            //variável de resultado         
+        double result;                                            //variável de resultado         
         float[] num1 = new float[20];                         //variável de número para subtração
         Scanner inputDados = new Scanner(System.in);            //cria um objeto Scanner chamado "inputdeDADOS"
         do {
@@ -65,7 +65,22 @@ public class calculadora {
                 break;                                                                 //fim case 3
             
             case 4:
-                
+                result = 1.0;
+                Contador = 1;
+                System.out.println("Quantos números serão divididos?");
+                i = inputDados.nextInt();
+                System.out.println("Qual e o 1º número?");
+                double n1 = inputDados.nextInt(); 
+                result = n1 / result;                               //probleminha que se resolve fazendo essa primeira parte do negócio fora do laço 'for'
+                for (int j=1;j<i;j++) {
+                    Contador = Contador + 1;
+                    System.out.println("Qual é o " + Contador + "º número?");             
+                    double n2 = inputDados.nextDouble();                                  
+                    result = result / n2;
+                }
+                System.out.println("A divisão dos números é de: " + result);       
+                break;        
+
             default:
                 break;
             }
