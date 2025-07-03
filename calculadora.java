@@ -12,7 +12,7 @@ public class calculadora {
             System.out.println("---  2. Subtrair números  ---");
             System.out.println("--- 3.Multiplicar números ---");
             System.out.println("---  4. Dividir números   ---");
-            System.out.println("--- 5. Potenciar  números ---");
+            System.out.println("--- 5. Potenciar números  ---");
             System.out.println("---       6. Sair         ---");
             System.out.println("-----------------------------");
             System.out.println("Sua opção: ");
@@ -79,7 +79,20 @@ public class calculadora {
                     result = result / n2;
                 }
                 System.out.println("A divisão dos números é de: " + result);       
-                break;        
+                break;                                                        //final case 4
+            
+            case 5:
+                result = 1;
+                Contador = 0;
+                System.out.println("Digite o número da base: ");
+                int base = inputDados.nextInt();
+                System.out.println("Digite o número de elevação: ");
+                int exp = inputDados.nextInt();
+                for (int j=0;j<exp;j++) { 
+                    result = result * base; 
+                }
+                System.out.println("A potência do número é: " + result);       
+                break;                                                      //final case 5
 
             default:
                 break;
